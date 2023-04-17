@@ -31,4 +31,3 @@ jobs:
           GITHUB_TOKEN: ${{ github.TOKEN }}
           BRANCH: ${{ env.BRANCH }}
           FOLDER: ${{ env.OUTPUTPATH }}
-          theme: minima
