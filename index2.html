@@ -5,8 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="description" content="Dokumentation NWT-Projekt">
+<meta name="author" content="Stevan Vlajic, Moritz Wagner">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>VLAJIC-WAGNER-NWT-DOCS</title>
+<title>Dokumentation Netzwerktechnik Projekt</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,16 +440,481 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>VLAJIC-WAGNER-NWT-DOCS</h1>
+<h1>Dokumentation Netzwerktechnik Projekt</h1>
+<div class="details">
+<span id="author" class="author">Stevan Vlajic, Moritz Wagner</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_webserver">1. Webserver</a>
+<ul class="sectlevel2">
+<li><a href="#_config">1.1. Config</a></li>
+<li><a href="#_setup">1.2. Setup</a></li>
+</ul>
+</li>
+<li><a href="#_adblocker">2. AdBlocker</a>
+<ul class="sectlevel2">
+<li><a href="#_config_2">2.1. Config</a></li>
+<li><a href="#_setup_2">2.2. Setup</a></li>
+</ul>
+</li>
+<li><a href="#_router">3. Router</a>
+<ul class="sectlevel2">
+<li><a href="#_config_3">3.1. Config</a></li>
+</ul>
+</li>
+<li><a href="#_proxyserver">4. Proxyserver</a>
+<ul class="sectlevel2">
+<li><a href="#_config_4">4.1. Config</a></li>
+<li><a href="#_setup_3">4.2. Setup</a></li>
+</ul>
+</li>
+<li><a href="#_desktop_vm">5. Desktop VM</a>
+<ul class="sectlevel2">
+<li><a href="#_settings">5.1. Settings</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Team:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stevan Vlajic</p>
+</li>
+<li>
+<p>Jonas Fröller</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Grundsätzlich haben alle Benutzer dasselbe Passwort:</p>
+</div>
+<div class="paragraph">
+<p>User:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>username: stevan oder moritz</p>
+</li>
+<li>
+<p>Passwort: Stevan2006 oder Moritz2006</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>oder</p>
+</div>
+<div class="paragraph">
+<p>Root User:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>username: root</p>
+</li>
+<li>
+<p>Passwort: FA8622-3a1b</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_webserver"><a class="anchor" href="#_webserver"></a>1. Webserver</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Name: 3ahitm-vlajic-wagner-webserver</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wieso Apache?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Easy to use" und einfach zu installieren</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_config"><a class="anchor" href="#_config"></a>1.1. Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway: <strong>10.9.7.37</strong></p>
+</li>
+<li>
+<p>IPv4: <strong>10.9.7.34/28</strong></p>
+</li>
+<li>
+<p>DNS: <strong>10.9.7.35</strong></p>
+</li>
+<li>
+<p>Brigde: <strong>vmbr 7</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setup"><a class="anchor" href="#_setup"></a>1.2. Setup</h3>
+<div class="paragraph">
+<p>Verwendete Software: Apache2
+Verwendetes OS: Ubuntu lts</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo useradd stevan</code></p>
+</li>
+<li>
+<p>sudo usermod -aG sudo stevan</p>
+<div class="ulist">
+<ul>
+<li>
+<p>password: FA8622-3a1b</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sudo apt-get update &amp;&amp; sudo apt full-upgrade -y</code></p>
+</li>
+<li>
+<p><code>sudo apt-get install apache2 -y</code></p>
+</li>
+<li>
+<p><code>cd /var/www/html/ &amp;&amp; git clone <a href="https://github.com/Stevan06v/TicTacToe.git" class="bare">https://github.com/Stevan06v/TicTacToe.git</a></code></p>
+</li>
+<li>
+<p><code>mv ./TicTacToe/* ./</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Webserver unter 10.9.7.34 erreichbar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adblocker"><a class="anchor" href="#_adblocker"></a>2. AdBlocker</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Name: 3ahitm-vlajic-wagner-adblocker</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Wieso PiHole:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Easy to use" &amp; leichte installation</p>
+</li>
+<li>
+<p>Klein und "kompakt" im Vergleich zu AdGuard</p>
+</li>
+<li>
+<p>Eigene gute Erfahrungen mit PiHole gemacht</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_config_2"><a class="anchor" href="#_config_2"></a>2.1. Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway: <strong>10.9.7.37</strong></p>
+</li>
+<li>
+<p>IPv4: <strong>10.9.7.35/28</strong></p>
+</li>
+<li>
+<p>DNS: <strong>10.9.7.35</strong></p>
+</li>
+<li>
+<p>Brigde: <strong>vmbr 7</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setup_2"><a class="anchor" href="#_setup_2"></a>2.2. Setup</h3>
+<div class="paragraph">
+<p>Verwendete Software: PiHole
+Verwendetes OS: Ubuntu lts</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo useradd stevan</code></p>
+</li>
+<li>
+<p>sudo usermod -aG sudo stevan</p>
+<div class="ulist">
+<ul>
+<li>
+<p>password: FA8622-3a1b</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sudo apt-get update &amp;&amp; sudo apt full-upgrade -y</code></p>
+</li>
+<li>
+<p><code>curl -sSL <a href="https://install.pi-hole.net" class="bare">https://install.pi-hole.net</a> | bash</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>PiHole unter 10.9.7.35 erreichbar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_router"><a class="anchor" href="#_router"></a>3. Router</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Name: 3ahitm-vlajic-wagner-router</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_config_3"><a class="anchor" href="#_config_3"></a>3.1. Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>net0:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name: GNET</p>
+</li>
+<li>
+<p>Gateway: <strong>10.9.7.254</strong></p>
+</li>
+<li>
+<p>IPv4: <strong>10.9.7.251/28</strong></p>
+</li>
+<li>
+<p>Brigde: <strong>vmbr 7</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>net1:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name: eth0</p>
+</li>
+<li>
+<p>IPv4: <strong>10.9.7.37/28</strong></p>
+</li>
+<li>
+<p>Brigde: <strong>vmbr 7</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_proxyserver"><a class="anchor" href="#_proxyserver"></a>4. Proxyserver</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Name: 3ahitm-vlajic-wagner-proxyserver</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wieso SQUID?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"Easy to use" und einfach zu installieren</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_config_4"><a class="anchor" href="#_config_4"></a>4.1. Config</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway: <strong>10.9.7.37</strong></p>
+</li>
+<li>
+<p>IPv4: <strong>10.9.7.38/28</strong></p>
+</li>
+<li>
+<p>DNS: <strong>10.9.7.35</strong></p>
+</li>
+<li>
+<p>Brigde: <strong>vmbr 7</strong></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setup_3"><a class="anchor" href="#_setup_3"></a>4.2. Setup</h3>
+<div class="paragraph">
+<p>Verwendete Software: Apache2
+Verwendetes OS: Ubuntu lts</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Commands:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sudo useradd stevan</code></p>
+</li>
+<li>
+<p>sudo usermod -aG sudo stevan</p>
+<div class="ulist">
+<ul>
+<li>
+<p>password: FA8622-3a1b</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sudo apt-get update &amp;&amp; sudo apt full-upgrade -y</code></p>
+</li>
+<li>
+<p><code>sudo apt-get install apache2 -y</code></p>
+</li>
+<li>
+<p><code>sudo apt-get install squid</code></p>
+</li>
+<li>
+<p><code>sudo nano /etc/squid/squid.conf</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>http_port 3128</code></p>
+</li>
+<li>
+<p><code>http_access allow all</code></p>
+</li>
+<li>
+<p><code>cache_dir ufs /var/spool/squid 100 16 256</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>sudo systemctl restart squid</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Webserver unter 10.9.7.38 erreichbar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_desktop_vm"><a class="anchor" href="#_desktop_vm"></a>5. Desktop VM</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Name: 3ahitm-vlajic-wagner-desktopvm</p>
+</li>
+<li>
+<p>VM-ID: 7231</p>
+</li>
+<li>
+<p>Sprache (Keyboard Layout): German</p>
+</li>
+<li>
+<p>Vor/Nachname: Stevan</p>
+</li>
+<li>
+<p>Passwort: Stevan2006</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_settings"><a class="anchor" href="#_settings"></a>5.1. Settings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>IP: 10.9.7.33</p>
+</li>
+<li>
+<p>Netmask: /28</p>
+</li>
+<li>
+<p>DNS: 10.9.7.35</p>
+</li>
+<li>
+<p>Gateway: 10.9.7.37</p>
+</li>
+<li>
+<p>OS-Type: 6.x - 2.6 Kernel</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-17 13:40:55 UTC
+Last updated 2023-04-24 08:09:42 UTC
 </div>
 </div>
 </body>
