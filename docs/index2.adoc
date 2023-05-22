@@ -153,7 +153,6 @@ Webserver unter 10.9.7.38 erreichbar.
 * Gateway: 10.9.7.37
 * OS-Type: 6.x - 2.6 Kernel
 
+== Netzwerkplan
 
-
-
-asdjzgasjzdgvaszudvuzasdguasvduagsvd
+image::./netzwerkplan.png[]
