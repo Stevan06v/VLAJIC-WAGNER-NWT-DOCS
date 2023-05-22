@@ -145,6 +145,14 @@ Webserver unter 10.9.7.38 erreichbar.
 * Vor/Nachname: Stevan
 * Passwort: Stevan2006
 
+=== Remote Desktop
+* `sudo apt-get install lxde`
+* `sudo apt-get install xrdp`
+* `sudo systemctl enable xrdp`
+* `sudo systemctl start xrdp`
+
+image::./img/test.png[]
+
 === Settings
 * IP: 10.9.7.33
 * Netmask: /28
