@@ -136,7 +136,12 @@ Verwendetes OS: Ubuntu lts
 *** `cache_dir ufs /var/spool/squid 100 16 256`
 ** `sudo systemctl restart squid`
 
-Webserver unter 10.9.7.38 erreichbar.
+Proxyserver unter 10.9.7.38 erreichbar.
+
+=== Bilder
+
+image::./img/ok.png[]
+
 
 == Desktop VM
 * Name: 3ahitm-vlajic-wagner-desktopvm
