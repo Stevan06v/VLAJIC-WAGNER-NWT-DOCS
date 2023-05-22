@@ -9,7 +9,6 @@ Stevan Vlajic, Moritz Wagner
 :toc:
 :doctype: book
 :url-repo: https://github.com/Stevan06v/VLAJIC-WAGNER-NWT-DOCS.git
-:imagesdir: ../img
 
 * Team:
 ** Stevan Vlajic
@@ -155,4 +154,4 @@ Webserver unter 10.9.7.38 erreichbar.
 
 == Netzwerkplan
 
-
+image::img/netzwerkplan.png[]
