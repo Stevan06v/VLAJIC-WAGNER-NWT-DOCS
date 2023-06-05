@@ -12,7 +12,11 @@ Stevan Vlajic, Moritz Wagner
 
 * Team:
 ** Stevan Vlajic
-** Jonas Fröller
+** Moritz Wagner
+
+* Stand der Dinge:
+** Die Basic und Extended Tasks sind fertig
+** Sind gerade bei der Top Task
 
 Grundsätzlich haben alle Benutzer dasselbe Passwort:
 
