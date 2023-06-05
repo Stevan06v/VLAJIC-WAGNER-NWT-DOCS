@@ -15,8 +15,9 @@ Stevan Vlajic, Moritz Wagner
 ** Moritz Wagner
 
 * Stand der Dinge:
-** Die Basic und Extended Tasks sind fertig
-** Sind gerade bei der Top Task
+** Die Basic Task ist fertig
+** Die Extended Task ist zu 90% fertig
+
 
 Grundsätzlich haben alle Benutzer dasselbe Passwort:
 
