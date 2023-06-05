@@ -16,7 +16,7 @@ Stevan Vlajic, Moritz Wagner
 
 * Stand der Dinge:
 ** Die Basic Task ist fertig
-** Die Extended Task ist zu 90% fertig
+** Die Extended Task fertig
 
 
 Grundsätzlich haben alle Benutzer dasselbe Passwort:
@@ -173,3 +173,37 @@ image::./img/test.png[]
 == Netzwerkplan
 
 image::img/netzwerkplan.png[]
+
+== FCAPS
+* Performance Management
+** Zusätzlicher Uptime Robot Webserver für Performance Management
+** Checkt ob Services Online sind
+** Gibt die Latenz aus
+** Gibt den derzeitigen PING der Webseite an
+** Gibt an wie lange die Services schon laufen
+
+* Configuration Management
+** Tägliche Backups von den Daten
+** Monatliche Backups von den Configurations Dateien
+
+* Fault Management
+** Backups von Fehler Log-Files
+** Ursprung des Fehlers festlegen
+** Kontinuierliche Updates der einzelnen System Softwares
+** Automatische Benachrichtigung bei Fehlern
+
+* Security Management
+** Firewall einrichten, um Zugang zum Netzwerk einzuschränken
+** Monitoring Software einsetzen wie zum Beispiel:
+*** Nagios
+*** ZABBIX
+*** CHeckMK
+** um Fehler schnell feststellen zu können und die Sicherheit zu jeder Zeit gewährleisten zu können
+
+* Accounting Management
+** Netzwerk Protokollieren von Netzwerk Aktivitäten um ungewünschten Daten Verkehr einzuschränken
+** Quota Systeme implementieren um die Nutzung von Netzwerkressourcen leicht begrenzen zu können
+** Regelmäßige Analyse des Netzwerktraffics um die Effizient zu verbessern
+
+
+
